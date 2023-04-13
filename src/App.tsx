@@ -1,38 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './containers/Header';
+import Home from './containers/Home';
+import Users from './containers/Users';
 
-interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
 
-const App: React.FC = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
-      setPosts(response.data);
-    };
-    fetchPosts();
-  }, []);
-
+function App() {
   return (
-    <div className="App">
-      <h1>Posts</h1>
-      <ul>
-        {posts.map(post => (
-          <li key={post.id}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/users" element={<Users />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;

@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-table-container {
+  width: 60%;
+}
+
+.user-details-container {
+  width: 40%;
+}

@@ -1,28 +1,61 @@
-import { useState } from "react";
-import About from "../About";
+import React, { useEffect, useState } from 'react';
+import PostCard from '../PostCard';
+import './index.css';
 
-export default function Home() {
-  return <div>Home</div>;
+interface Post {
+  id: number;
+  title: string;
+  body: string;
 }
 
-/***
- *
- *  git add . (add all changes to staging ) staging => files to be committed
- *
- *  git commit -m "adding new features"
- *
- *  git push (git push origin main)
- */
+const Home: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [searchTitle, setSearchTitle] = useState<string>('');
+  const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
 
-/**
- *  Commit Conventions
- *
- *   feat(Web): "your message"
- *
- *   fix(web): "your message"
- *
- *   style(web): "your message"
- *
- *   refactor(web): "your message"
- *
- */
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then((response) => response.json())
+      .then((data) => setPosts(data));
+  }, []);
+
+  const handlePostClick = (id: number) => {
+    // Navigate to post details page
+    console.log(`Navigating to post details page for post ${id}`);
+  };
+
+  const handleFavoriteClick = (id: number) => {
+    if (favoriteIds.includes(id)) {
+      setFavoriteIds(favoriteIds.filter((favId) => favId !== id));
+    } else {
+      setFavoriteIds([...favoriteIds, id]);
+    }
+  };
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchTitle.toLowerCase())
+  );
+
+  return (
+    <div className="containerh">
+      <input
+        className="filter-input"
+        type="text"
+        placeholder="Filter by title"
+        value={searchTitle}
+        onChange={(e) => setSearchTitle(e.target.value)}
+      />
+      <div className="post-list">
+        {filteredPosts.map((post) => (
+          <PostCard
+            key={post.id}
+            post={post}
+            onPostClick={handlePostClick}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
