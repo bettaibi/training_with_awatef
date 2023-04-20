@@ -15,7 +15,7 @@ interface User {
 }
 
 
-const UserTable: React.FC<UserTableProps> = ({ users, onSelectUser }) => {
+function UserTable({ users, onSelectUser }: UserTableProps) {
   return (
     <table>
       <thead>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import PostCard from '../PostCard';
+import PostCard from '../../components/PostCard';
 import './index.css';
+import Header from '../../components/Header';
 
 interface Post {
   id: number;
@@ -8,7 +9,7 @@ interface Post {
   body: string;
 }
 
-const Home: React.FC = () => {
+const Home: React.FC = function()  {
   const [posts, setPosts] = useState<Post[]>([]);
   const [searchTitle, setSearchTitle] = useState<string>('');
   const [favoriteIds, setFavoriteIds] = useState<number[]>([]);
@@ -37,7 +38,11 @@ const Home: React.FC = () => {
   );
 
   return (
+   <div>
+     <Header />
+   
     <div className="containerh">
+      
       <input
         className="filter-input"
         type="text"
@@ -55,7 +60,10 @@ const Home: React.FC = () => {
         ))}
       </div>
     </div>
+    </div>
   );
 };
 
 export default Home;
+
+

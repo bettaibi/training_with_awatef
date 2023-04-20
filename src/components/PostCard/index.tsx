@@ -12,7 +12,7 @@ interface Post {
   body: string;
 }
 
-const PostCard: React.FC<PostCardProps> = ({ post, onPostClick }) => {
+function PostCard({ post, onPostClick }: PostCardProps){
   const [isFavorited, setIsFavorited] = useState<boolean>(
     () => JSON.parse(localStorage.getItem(`post-${post.id}`) || 'false')
   );

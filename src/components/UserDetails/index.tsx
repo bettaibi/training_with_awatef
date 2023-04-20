@@ -13,7 +13,7 @@ interface User {
   phone: string;
   website: string;
 }
-const UserDetails: React.FC<UserDetailsProps> = ({ user }) => {
+function UserDetails({ user }: UserDetailsProps) {
   return (
     <div>
       <h3>{user.name}</h3>

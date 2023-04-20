@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './index.css'
 
-const Header: React.FC = () => {
+const Header: React.FC = function () {
   return (
     <header>
       <nav>
