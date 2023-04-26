@@ -1,5 +1,5 @@
-import React from 'react';
-import './index.css'
+
+import UserTableCSS from './UserTable.module.css'
 
 interface UserTableProps {
   users: User[];
@@ -17,6 +17,7 @@ interface User {
 
 function UserTable({ users, onSelectUser }: UserTableProps) {
   return (
+    <div className={UserTableCSS.userTable}>
     <table>
       <thead>
         <tr>
@@ -33,6 +34,7 @@ function UserTable({ users, onSelectUser }: UserTableProps) {
         ))}
       </tbody>
     </table>
+    </div>
   );
 };
 

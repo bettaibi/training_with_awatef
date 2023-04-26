@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import UserTable from '../../components/UserTable';
 import UserDetails from '../../components/UserDetails';
-import './index.css'
+import UsersCSS from './Users.module.css'
 import Header from '../../components/Header';
 
 interface User {
@@ -27,12 +27,12 @@ const Users: React.FC = function(){
     <div>
          <Header />
    
-    <div className="container">
+    <div className={UsersCSS.container}>
     
-      <div className="user-table-container">
+      <div className={UsersCSS.userTableContainer}>
         <UserTable users={users} onSelectUser={setSelectedUser} />
       </div>
-      <div className="user-details-container">
+      <div className={UsersCSS.userDetailsContainer}>
         {selectedUser && <UserDetails user={selectedUser} />}
       </div>
     </div>

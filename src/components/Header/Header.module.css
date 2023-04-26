@@ -7,24 +7,23 @@ header {
     padding:2rem;
   }
   
-  
-  
-  .nav-links {
+
+  .navLinks {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   
-  .nav-link {
+  .navLink {
     padding: 0.5rem 0.5rem;
     text-decoration: none;
     color: white;
   }
   
-  .nav-link:hover {
+  .navLink:hover {
     background-color: white;
     color: black;
    
   }
-  
+

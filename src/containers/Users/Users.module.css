@@ -2,12 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+ 
 }
 
-.user-table-container {
+.userTableContainer {
   width: 60%;
 }
 
-.user-details-container {
+.userDetailsContainer {
   width: 40%;
 }

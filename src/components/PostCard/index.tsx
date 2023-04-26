@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './index.css'
+import PostCardCSS from './PostCard.module.css'
 
 interface PostCardProps {
   post: Post;
@@ -26,7 +26,7 @@ function PostCard({ post, onPostClick }: PostCardProps){
   };
 
   return (
-    <div className="post-card">
+    <div className={PostCardCSS.postCard}>
       <h3 onClick={() => onPostClick(post.id)}>{post.title}</h3>
       <p>{post.body}</p>
       <button onClick={handleFavoriteClick}>

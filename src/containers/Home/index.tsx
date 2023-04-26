@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PostCard from '../../components/PostCard';
-import './index.css';
+import HomeCSS from './Home.module.css';
 import Header from '../../components/Header';
 
 interface Post {
@@ -41,16 +41,16 @@ const Home: React.FC = function()  {
    <div>
      <Header />
    
-    <div className="containerh">
+    <div className={HomeCSS.container}>
       
       <input
-        className="filter-input"
+        className={HomeCSS.filterInput}
         type="text"
         placeholder="Filter by title"
         value={searchTitle}
         onChange={(e) => setSearchTitle(e.target.value)}
       />
-      <div className="post-list">
+      <div className={HomeCSS.postList}>
         {filteredPosts.map((post) => (
           <PostCard
             key={post.id}

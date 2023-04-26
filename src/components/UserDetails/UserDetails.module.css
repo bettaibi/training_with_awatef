@@ -1,7 +1,7 @@
-h3 {
+.details h3 {
     margin-top: 0;
   }
   
-  p {
+  .details p {
     margin: 0.5rem 0;
   }

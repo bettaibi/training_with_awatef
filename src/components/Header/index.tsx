@@ -1,21 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './index.css'
+import HeaderCSS from './Header.module.css'
 
 const Header: React.FC = function () {
   return (
-    <header>
+    <header>   
       <nav>
-       
-       
-        <ul className="nav-links">
+        <ul className={HeaderCSS.navLinks}>
           <li>
-            <Link to="/" className="nav-link">
+            <Link to="/" className={HeaderCSS.navLink}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/users" className="nav-link">
+            <Link to="/users" className={HeaderCSS.navLink}>
               Users
             </Link>
           </li>

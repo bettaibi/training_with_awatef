@@ -1,21 +1,21 @@
-.containerh {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.filter-input {
+.filterInput {
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-.post-list {
+.postList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.post-card {
+.postCard {
   width: 400px;
   margin: 20px;
   padding: 20px;
@@ -24,17 +24,17 @@
   background-color: #fff;
 }
 
-.post-card h3 {
+.postCard h3 {
   margin-top: 0;
   margin-bottom: 10px;
 }
 
-.post-card p {
+.postCard p {
   margin-top: 0;
   margin-bottom: 20px;
 }
 
-.post-card button {
+.postCard button {
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
@@ -42,6 +42,6 @@
   cursor: pointer;
 }
 
-.post-card button:hover {
+.postCard button:hover {
   background-color: #ccc;
 }

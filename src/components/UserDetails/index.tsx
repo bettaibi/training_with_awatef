@@ -1,5 +1,4 @@
-import React from 'react';
-import './index.css'
+import UserDetailsCSS from './UserDetails.module.css'
 
 interface UserDetailsProps {
   user: User;
@@ -15,7 +14,7 @@ interface User {
 }
 function UserDetails({ user }: UserDetailsProps) {
   return (
-    <div>
+    <div className={UserDetailsCSS.details}>
       <h3>{user.name}</h3>
       <p>Username: {user.username}</p>
       <p>Email: {user.email}</p>
