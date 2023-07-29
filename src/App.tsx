@@ -1,17 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './containers/Home';
-import Users from './containers/Users';
-
+import FilterNestedArray from "./components/FilterNestedArray";
 
 function App() {
   return (
-    <Router> 
-    
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/users" element={<Users />} />
-      </Routes>
-    </Router>
+    <>
+      <FilterNestedArray />
+    </>
   );
 }
 
